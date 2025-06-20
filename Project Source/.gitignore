@@ -1,0 +1,43 @@
+# --------------------------------------------------------------------
+# 🟢 HER YERDEN
+# --------------------------------------------------------------------
+
+## Uzantı
+*.suo
+*.user
+*.userosscache
+*.csproj.user
+*.pyc
+*.pyo
+*.pyd
+
+## Dosya
+*.log
+*.tmp
+*.cache
+*.DS_Store
+Thumbs.db
+
+## Klasör
+__pycache__/
+dist/
+build/
+*.spec
+venv/
+.env/
+env/
+.idea/
+_ReSharper*/
+packages/
+
+# --------------------------------------------------------------------
+# 🟢 BİR YERDEN
+#    (sadece ana dizin için başına / konulur)
+# --------------------------------------------------------------------
+
+## Klasör
+/.vs/
+/bin/
+/obj/
+/publish/
+/dist/

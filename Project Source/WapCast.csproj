@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+    <!-- Hangi runtime için koyuyorsan: win-x64, win-x86 vs. -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- .NET runtime’ı da içine gömecek -->
+    <SelfContained>true</SelfContained>
+    <!-- Tüm içerikleri tek exe’ye paketleyecek -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <!-- EXE’leri de içeriğe dahil et -->
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+
+      <ApplicationIcon>icon.ico</ApplicationIcon>
+      <Win32Icon>icon.ico</Win32Icon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="export_example.py" />
+    <None Remove="send_image.py" />
+    <None Remove="send_text.py" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="send_image.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="send_text.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="export_example.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="send_image.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="send_text.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="export_example.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
